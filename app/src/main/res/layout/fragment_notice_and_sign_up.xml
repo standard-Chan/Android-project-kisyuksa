@@ -25,9 +25,11 @@
                 android:id="@+id/notice_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="15dp"
                 android:textSize="20dp"
-                android:text="공지"/>
+                android:textStyle="bold"
+                android:text="공지"
+                android:textColor="@color/text_color_gray"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -35,12 +37,13 @@
                 android:gravity="center|center_horizontal">
                 <TextView
                     android:id="@+id/notice_contents"
-                    android:text="중간 간식 행사"
+                    android:text="중간 간식 행사 - 임시 텍스트"
+                    android:textStyle="bold"
                     android:layout_marginLeft="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <View
-                    android:background="@color/black"
+                    android:background="@color/text_color_gray"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"/>
             </LinearLayout>
@@ -52,43 +55,102 @@
             android:background="@color/background_skyblue"
             android:orientation="vertical"
             android:gravity="center_horizontal">
-            <TableLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp">
-                <TableRow>
-                    <Button
-                        android:layout_width="wrap_content"
+                android:gravity="center">
+                <android.widget.Button
+                    android:id="@+id/sleepover_apply_button"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="5"
+                    android:text="외박"
+                    android:paddingTop="50dp"
+                    android:drawableTop="@drawable/noticeview_sleepoverapply"
+                    android:background="@drawable/round_button_skyblue" />
+
+                <android.widget.Button
+                    android:id="@+id/diet_button"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/sleepover_apply_button"
+                    android:layout_weight="5"
+                    android:background="@drawable/round_button_skyblue"
+                    android:drawableTop="@drawable/noticeview_diet"
+                    android:paddingTop="45dp"
+                    android:text="외박" />
+                <android.widget.Button
+                    android:id="@+id/sleepover_list_button"
+                    android:layout_below="@id/sleepover_apply_button"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="5"
+                    android:drawableTop="@drawable/noticeview_sleepoverlist"
+                    android:paddingTop="25dp"
+                    android:text="외박내역"
+                    android:background="@drawable/round_button_skyblue" />
+                <android.widget.Button
+                    android:id="@+id/notice_button"
+                    android:layout_toRightOf="@id/sleepover_list_button"
+                    android:layout_below="@id/diet_button"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="5"
+                    android:drawableTop="@drawable/noticeview_notice"
+                    android:paddingTop="30dp"
+                    android:text="공지사항"
+                    android:background="@drawable/round_button_skyblue" />
+            </RelativeLayout>
+
+                        <!--<TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">-->
+                <!--<TableRow>
+                    <android.widget.Button
+                        android:layout_width="100dp"
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
                         android:layout_weight="5"
                         android:text="외박"
-                        android:background="@color/border_skyblue" />
-                    <Button
-                        android:layout_width="wrap_content"
+                        android:paddingTop="50dp"
+                        android:drawableTop="@drawable/noticeview_sleepoverapply"
+                        android:background="@drawable/round_button_skyblue" />
+
+                    <android.widget.Button
+                        android:layout_width="100dp"
                         android:layout_height="150dp"
                         android:layout_margin="10dp"
                         android:layout_weight="5"
-                        android:text="식단"
-                        android:background="@color/border_skyblue" />
+                        android:background="@drawable/round_button_skyblue"
+                        android:drawableTop="@drawable/noticeview_diet"
+                        android:paddingTop="50dp"
+                        android:text="식단" />
                 </TableRow>
                 <TableRow>
-                    <Button
+                    <android.widget.Button
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:layout_weight="5"
                         android:text="외박내역"
-                        android:background="@color/border_skyblue" />
-                    <Button
+                        android:background="@drawable/round_button_skyblue" />
+                    <android.widget.Button
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:layout_weight="5"
                         android:text="공지사항"
-                        android:background="@color/border_skyblue" />
+                        android:background="@drawable/round_button_skyblue" />
                 </TableRow>
-            </TableLayout>
+            </TableLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,11 +165,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:textStyle="bold"
                         android:text="오늘의 식단"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:background="@color/black"/>
+                        android:background="@color/text_color_gray"/>
                 </LinearLayout>
                 <TextView
                     android:layout_width="match_parent"
